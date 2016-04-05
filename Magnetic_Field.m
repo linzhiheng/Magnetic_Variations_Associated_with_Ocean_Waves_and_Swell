@@ -17,7 +17,10 @@ Beta = Gamma/(waveNumber*waveNumber);
 B = sqrt(1+(i*Beta));
 
 %Vertical Component of Magnetic Field
+hZFunction = @(z) i*A*( (2/(1+B)) * exp(-waveNumber*z*B)...
+                          - exp(-waveNumber*z) );
 
-hzFunction = @(z) i*A*( (2/(1+B)) * exp(-waveNumber*z*B)...
+%Horizontal Component of Magnetic Field
+hXFunction = @(z) -1*A*( ((2*B)/(1+B)) * exp(-waveNumber*z*B)...
                           - exp(-waveNumber*z) );
 
