@@ -1,6 +1,6 @@
-earthField = 1;
-dip_EarthField = 5;
-inclination_EarthField = 20;
+earthField = 0.5;
+dip_EarthField = 70;
+inclination_EarthField = 0;
 
 amplitude = 1;
 angularFrewuency = 2;
