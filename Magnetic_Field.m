@@ -2,9 +2,11 @@ earthField = 0.5;
 dip_EarthField = 70;
 inclination_EarthField = 0;
 
+gravity = 9.8;
+
 amplitude = 1;
-angularFrewuency = 2;
-waveNumber = 1;
+angularFrewuency = 1.25;
+waveNumber = (angularFrewuency*angularFrewuency)/gravity;
 
 conductivity = 1;
 
@@ -18,12 +20,12 @@ B = sqrt(1+(i*Beta));
 
 % z > 0
 %Vertical Component of Magnetic Field
-hZDownFunction = @(z) i*A*( (2/(1+B)) * exp(-waveNumber*z*B)...
-                          - exp(-waveNumber*z) );
+hZDownFunction = @(z) i*A*( (2/(1+B)) * exp(-1*waveNumber*z*B)...
+                          - exp(-1*waveNumber*z) );
 
 %Horizontal Component of Magnetic Field
-hXDownFunction = @(z) -1*A*( ((2*B)/(1+B)) * exp(-waveNumber*z*B)...
-                          - exp(-waveNumber*z) );
+hXDownFunction = @(z) -1*A*( ((2*B)/(1+B)) * exp(-1*waveNumber*z*B)...
+                          - exp(-1*waveNumber*z) );
 
 % z < 0
 %Vertical Component of Magnetic Field
